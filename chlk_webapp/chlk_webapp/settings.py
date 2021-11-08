@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig',
     'rest_framework',
     'corsheaders',
+    'frontend.apps.FrontendConfig'
 ]
 
 CORS_ORIGIN_ALLOW_ALL=True
