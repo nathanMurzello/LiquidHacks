@@ -1,9 +1,7 @@
-from django.urls import path
-from django.conf.urls import url
-from api import views
+from rest_framework import routers
+from .api import SlideshowViewSet
 
-urlpatterns = [
-    url(r'^slideshow$',views.slideshowApi),
-    url(r'^slideshow/([0-9]+)$',views.slideshowApi),
-   # path('home', SlideshowView.as_view() )
-]
+router=routers.DefaultRouter()
+router.register('api/Slideshows', SlideshowViewSet, 'Slideshows')
+
+urlpatterns=router.urls

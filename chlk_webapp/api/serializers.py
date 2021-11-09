@@ -4,4 +4,4 @@ from .models import SlideShow
 class SlideshowSerializer(serializers.ModelSerializer):
     class Meta: 
         model=SlideShow
-        fields=('id','name', 'created_on', 'slides')
+        fields='__all__'
