@@ -1,15 +1,10 @@
 import React, { Component } from "react";
-import {render} from "react-dom";
+import ReactDOM from "react-dom";
 
-export default class App extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render(){
-        return <h1> Testing React Code</h1>;
+class App extends Component {
+    render() {
+        return <h1>React App Test</h1>
     }
 }
 
-const appDiv=document.getElementById("app");
-render(<App />, appDiv);
+ReactDOM.render(<App />, document.getElementById('app'))
