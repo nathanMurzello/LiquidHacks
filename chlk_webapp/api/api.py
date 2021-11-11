@@ -4,8 +4,14 @@ from .serializers import SlideshowSerializer
 
 # Slideshow Viewset
 class SlideshowViewSet(viewsets.ModelViewSet):
-    queryset=SlideShow.objects.all()
     permission_classes= [
-        permissions.AllowAny
+        permissions.IsAuthenticated
     ]
+
     serializer_class=SlideshowSerializer
+
+    def get_queryset(self):
+        return self.request.user.slideshows.all()
+    
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)

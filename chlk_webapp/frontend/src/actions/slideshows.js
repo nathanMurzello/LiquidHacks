@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import { returnErrors } from './messages';
 import { GET_SLIDESHOWS, DELETE_SLIDESHOW } from './types';
 
 
@@ -12,7 +12,7 @@ export const getSlideshows= () => dispatch =>{
                 type: GET_SLIDESHOWS,
                 payload: res.data
             });
-        }).catch(err => console.log(err));
+        }).catch(err => dispatch(returnErrors(err.response.data,err.response.status)));
 };
 
 //DELTE SLIDESHOW
@@ -24,5 +24,5 @@ export const deleteSlideshow= (id) => dispatch =>{
                 type: DELETE_SLIDESHOW,
                 payload: id
             });
-        }).catch(err => console.log(err));
+        }).catch(err => dispatch(returnErrors(err.response.data,err.response.status)));
 };

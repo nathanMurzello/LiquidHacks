@@ -1,5 +1,5 @@
 from djongo import models
-
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Slide(models.Model):
@@ -13,3 +13,4 @@ class SlideShow(models.Model):
     name=models.CharField(max_length=60)
     created_on=models.DateTimeField(auto_now_add=True)
     slides=(models.ArrayField(model_container=Slide))
+    owner= models.ForeignKey(User, related_name="slideshows", on_delete=models.CASCADE, null=True)

@@ -19,5 +19,6 @@ from django.conf.urls import url,include
 
 urlpatterns = [
     path('', include('frontend.urls')),
-    path('', include('api.urls'))
+    path('', include('api.urls')),
+    path('', include('accounts.urls'))
 ]

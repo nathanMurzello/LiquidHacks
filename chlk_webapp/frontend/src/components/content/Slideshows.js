@@ -5,7 +5,9 @@ import  {getSlideshows, deleteSlideshow} from '../../actions/slideshows';
 
 export class Slideshows extends Component {
     static propTypes={
-        slideshows: PropTypes.array.isRequired
+        slideshows: PropTypes.array.isRequired,
+        getSlideshows: PropTypes.func.isRequired,
+        deleteSlideshow: PropTypes.func.isRequired
     };
 
     componentDidMount(){
@@ -18,21 +20,20 @@ export class Slideshows extends Component {
                 <table className="table table-striped">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            
                             <th>Name</th>
                             <th>Created On</th>
-                            <th>Slides</th>
+                            <th>Num Of Slides</th>
                             <th />
                             <th />
                         </tr>
                     </thead>
                     <tbody>
                         {this.props.slideshows.map(slideshow =>(
-                            <tr key={slideshow.id}>
-                                <td>{slideshow.id}</td>
+                            <tr key={slideshow.name}>
                                 <td>{slideshow.name}</td>
                                 <td>{slideshow.created_on}</td>
-                                <td>{slideshow.slides}</td>
+                                <td>{slideshow.slides.length}</td>
                                 <td><button className="btn btn-success btn-sm">Open</button></td>
                                 <td><button 
                                     onClick= {this.props.deleteSlideshow.bind(this,slideshow.id)}
