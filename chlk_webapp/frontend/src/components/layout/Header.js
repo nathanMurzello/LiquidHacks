@@ -16,7 +16,7 @@ export class Header extends Component {
         const authLinks=(
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                    {if (user.groups.includes("Teachers"))}
+                    
                     <Link to="/TeacherHome" className="nav-link">Home</Link>
                 </li>
                 <li className="nav-item">
