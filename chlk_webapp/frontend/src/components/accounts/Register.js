@@ -55,11 +55,11 @@ export class Register extends Component {
                 </div>
                 
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="groups" id="inlineRadio1" onChange={this.onChange} value="Teacher"/>
+                    <input class="form-check-input" type="radio" name="groups" id="inlineRadio1" onChange={this.onChange} value="1"/>
                     <label class="form-check-label" for="inlineRadio1">Teacher</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="groups" id="inlineRadio2" onChange={this.onChange} value="Student" />
+                    <input class="form-check-input" type="radio" name="groups" id="inlineRadio2" onChange={this.onChange} value="2" />
                     <label class="form-check-label" for="inlineRadio2">Student</label>
                 </div>
                 

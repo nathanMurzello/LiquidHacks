@@ -1,4 +1,4 @@
-import { GET_SLIDESHOWS, DELETE_SLIDESHOW } from "../actions/types.js";
+import { GET_SLIDESHOWS, DELETE_SLIDESHOW, ADD_SLIDESHOW } from "../actions/types.js";
 
 const initialState={
     slideshows: []
@@ -15,6 +15,11 @@ export default function(state= initialState, action) {
             return {
                 ...state,
                 slideshows: state.slideshows.filter(slideshow=>slideshow.id !== action.payload)
+            };
+        case ADD_SLIDESHOW:
+            return {
+                ...state,
+                slideshows: [...state.slideshows, action.payload]
             };
         default:
             return state;
