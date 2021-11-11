@@ -12,7 +12,6 @@ export class Teacher_Home extends Component {
         return (
             <Provider store={store}>
                 <Fragment>
-                    <Header />
                     <h1> TESTING </h1>
                     <div class="container">
                         <div class="row">
