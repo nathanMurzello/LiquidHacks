@@ -12,13 +12,24 @@ export class Header extends Component {
 
     render() {
         const {isAuthenticated, user}= this.props.auth;
+        
+        const teacherHome = (
+            <li className="nav-item">
+                <Link to="/TeacherHome" className="nav-link">Teacher Home</Link>
+            </li>
+        );
+        const studentHome = (
+            <li className="nav-item">
+                <Link to="/StudentHome" className="nav-link"> Student Home</Link>
+            </li>
+        );
+        
+
 
         const authLinks=(
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                    
-                    <Link to="/TeacherHome" className="nav-link">Home</Link>
-                </li>
+                {teacherHome}
+                {studentHome}
                 <li className="nav-item">
                     <button onClick={this.props.logout}className="nav-link btn btn-primary btn-sm text-light">Logout </button>
                 </li>          

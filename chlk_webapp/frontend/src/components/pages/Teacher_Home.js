@@ -1,5 +1,6 @@
 import React, { Component, Fragment} from "react";
 import ReactDOM from "react-dom";
+import {Link } from "react-router-dom";
 
 import Header from '../layout/Header';
 import Slideshows from "../content/Slideshows";
@@ -19,7 +20,9 @@ export class Teacher_Home extends Component {
                                 <Slideshows/>
                             </div>
                             <div class="col">
-                                <a href="#" class="btn btn-primary" onClick={() => history.push('/TeacherHome')}>Create Slideshow</a>
+                                <Link to='/SlideEditor'>
+                                    <button type="button" className="btn btn-primary"> Create Slideshow</button>
+                                </Link>
                             </div>
                             <div class= "col">
                                 <a href="#" class="btn btn-primary" onClick={() => history.push('/TeacherHome')}>Present Slideshow</a>

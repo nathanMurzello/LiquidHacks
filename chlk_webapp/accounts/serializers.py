@@ -1,6 +1,7 @@
 from rest_framework import serializers 
-from django.contrib.auth.models import User 
+from django.contrib.auth.models import User, Group
 from django.contrib.auth import authenticate 
+
 
 #User Serializer
 class UserSerializer (serializers.ModelSerializer):
@@ -14,9 +15,14 @@ class RegisterSerializer (serializers.ModelSerializer):
         model=User
         fields=('id', 'username', 'password', 'groups')
         extra_kwargs={'password': {'write_only': True}}
-    
+
+    def addToGroup(self, user, groupname):
+        user.groups.add(groupname)
+        
     def create(self, validated_data):
-        user=User.objects.create_user(validated_data['username'], password= validated_data['password'], groups=validated_data['groups'] )
+        
+        user=User.objects.create_user(validated_data['username'], password= validated_data['password'] )
+        
 
         return user
 
