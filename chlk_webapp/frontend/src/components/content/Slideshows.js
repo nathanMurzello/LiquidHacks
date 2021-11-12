@@ -43,6 +43,7 @@ export class Slideshows extends Component {
                                 <td><button 
                                     onClick= {this.props.addRoom.bind(this,slideshow.id)}
                                     className="btn btn-primary btn-sm">Present</button></td>
+                               
                             </tr>
                         ))}
                     </tbody>

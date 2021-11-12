@@ -15,7 +15,7 @@ export class Student_Home extends Component {
             
             <Provider store={store}>
                 <Fragment>
-                    <h1> TESTING Student Home</h1>
+                    <h1>Student Home</h1>
                     <div class="container">
                         <JoinRoom/>
                     </div>

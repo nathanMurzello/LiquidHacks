@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { returnErrors } from './messages';
-import { GET_SLIDESHOWS, DELETE_SLIDESHOW, ADD_SLIDESHOW} from './types';
+import { GET_SLIDESHOWS, DELETE_SLIDESHOW, ADD_SLIDESHOW, GET_SLIDESHOW} from './types';
 
 
 //GET SLIDESHOWS
@@ -20,6 +20,30 @@ export const getSlideshows= () => (dispatch,getState) =>{
 
     axios
         .get("/api/Slideshows/", config)
+        .then(res => {
+            dispatch({
+                type: GET_SLIDESHOWS,
+                payload: res.data
+            });
+        }).catch(err => dispatch(returnErrors(err.response.data,err.response.status)));
+};
+//get Slideshow
+export const getSlideshow= (id) => (dispatch,getState) =>{
+    //get token from state
+    const token=getState().auth.token;
+    //headers 
+    const config={
+        headers:{
+            'Content-Type': 'application/json'
+        }
+    };
+    //If token add to headers config
+    if(token){
+        config.headers['Authorization'] =`Token ${token}`;
+    }
+
+    axios
+        .get(`/api/Slideshows/${id}/`, config)
         .then(res => {
             dispatch({
                 type: GET_SLIDESHOWS,

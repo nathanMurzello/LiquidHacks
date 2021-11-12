@@ -1,4 +1,4 @@
-import { GET_SLIDESHOWS, DELETE_SLIDESHOW, ADD_SLIDESHOW } from "../actions/types.js";
+import { GET_SLIDESHOWS, DELETE_SLIDESHOW, ADD_SLIDESHOW, GET_SLIDESHOW } from "../actions/types.js";
 
 const initialState={
     slideshows: []
@@ -6,6 +6,7 @@ const initialState={
 
 export default function(state= initialState, action) {
     switch (action.type){
+        case GET_SLIDESHOW:
         case GET_SLIDESHOWS:
             return {
                 ...state,

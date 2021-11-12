@@ -14,6 +14,7 @@ export class SlideEditor extends Component {
                     <div class="container-sm">
                         <SlideshowForm/>
                     </div>
+                    
                 </Fragment>
             </Provider>
         )
