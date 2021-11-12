@@ -1,6 +1,7 @@
 # About CHLK
 
 CHLK is meant to be an interactive lecturing platform. Teachers are able to create slideshow presentations with minimal extra effort, and when presenting students are presented with an interactive experience to keep them engaged with the lecture.
+
 **Example**:
 A teacher creates the following bulletpoint: "_Variable: a way to store data."
 The teacher can highlight and mark this as a definition, then when presenting the students will be presented with this fill in the blank bullet point: "_\_\_\_\_: a way to store data."
