@@ -1,7 +1,11 @@
 from rest_framework import routers
-from .api import SlideshowViewSet
+from django.urls import include, path
+from .api import SlideshowViewSet, RoomViewSet, CreateRoomView
 
 router=routers.DefaultRouter()
 router.register('api/Slideshows', SlideshowViewSet, 'Slideshows')
-
-urlpatterns=router.urls
+router.register('api/Rooms', RoomViewSet, 'Rooms')
+urlpatterns = [ 
+    path('', include(router.urls)),
+    path('api/create-room', CreateRoomView.as_view()),
+]

@@ -41,9 +41,14 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig',
     'rest_framework',
     'corsheaders',
-    'frontend.apps.FrontendConfig'
+    'frontend.apps.FrontendConfig',
+    'knox',
+    'accounts.apps.AccountsConfig'
 ]
 
+REST_FRAMEWORK= {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',)
+}
 CORS_ORIGIN_ALLOW_ALL=True
 
 MIDDLEWARE = [
