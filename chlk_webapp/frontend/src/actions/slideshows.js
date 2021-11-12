@@ -57,7 +57,6 @@ export const deleteSlideshow= (id) => (dispatch,getState) =>{
 export const addSlideshow= (slideshow) => (dispatch,getState) =>{
     //get token from state
     const token=getState().auth.token;
-    console.log(token);
     //headers 
     const config={
         headers:{

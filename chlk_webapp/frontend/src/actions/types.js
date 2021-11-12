@@ -1,6 +1,9 @@
 export const GET_SLIDESHOWS="GET_SLIDESHOWS";
 export const DELETE_SLIDESHOW="DELETE_SLIDESHOW";
 export const ADD_SLIDESHOW="ADD_SLIDESHOW";
+export const GET_ROOM="GET_ROOM";
+export const DELETE_ROOM="DELETE_ROOM";
+export const ADD_ROOM="ADD_ROOM";
 export const GET_ERRORS = "GET_ERRORS";
 export const USER_LOADING= "USER_LOADING";
 export const USER_LOADED= "USER_LOADED";

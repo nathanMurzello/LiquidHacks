@@ -2,12 +2,14 @@ import React, { Component, Fragment } from 'react'
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import  {getSlideshows, deleteSlideshow} from '../../actions/slideshows';
+import { addRoom } from '../../actions/rooms';
 
 export class Slideshows extends Component {
     static propTypes={
         slideshows: PropTypes.array.isRequired,
         getSlideshows: PropTypes.func.isRequired,
-        deleteSlideshow: PropTypes.func.isRequired
+        deleteSlideshow: PropTypes.func.isRequired,
+        addRoom: PropTypes.func.isRequired
     };
 
     componentDidMount(){
@@ -38,6 +40,9 @@ export class Slideshows extends Component {
                                 <td><button 
                                     onClick= {this.props.deleteSlideshow.bind(this,slideshow.id)}
                                     className="btn btn-danger btn-sm">Delete</button></td>
+                                <td><button 
+                                    onClick= {this.props.addRoom.bind(this,slideshow.id)}
+                                    className="btn btn-primary btn-sm">Present</button></td>
                             </tr>
                         ))}
                     </tbody>
@@ -51,4 +56,4 @@ const mapStateToProps = state =>({
     slideshows: state.slideshows.slideshows
 });
 
-export default connect(mapStateToProps, { getSlideshows, deleteSlideshow })(Slideshows);
+export default connect(mapStateToProps, { getSlideshows, deleteSlideshow, addRoom })(Slideshows);

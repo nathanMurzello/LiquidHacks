@@ -5,5 +5,6 @@ urlpatterns = [
     path('', index),
     path('TeacherHome', index),
     path('StudentHome', index),
-    path('SlideEditor', index)
+    path('SlideEditor', index),
+    path('PresentingRoom/<str:roomCode>',index)
 ]
